@@ -13,7 +13,12 @@ async function init() {
   $('login').hidden = !!jwt; $('app').hidden = !jwt;
   if (jwt) load();
 }
-$('signin').onclick = () => sbc.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: location.href.split('#')[0] } });
+$('login').onsubmit = async e => {
+  e.preventDefault();
+  const { error } = await sbc.auth.signInWithPassword({ email: $('email').value.trim(), password: $('pass').value });
+  if (error) return toast('Login failed. Check email and password.', true);
+  init();
+};
 $('signout').onclick = async () => { await sbc.auth.signOut(); init(); };
 async function load() {
   try { vids = await api('/api/admin/videos'); render(); }
