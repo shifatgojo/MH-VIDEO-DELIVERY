@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="css/style.css"><title>Admin – MH Video Delivery</title><meta name="robots" content="noindex"></head><body><main class="wrap">
+<h1>MH Admin</h1>
+<div id="login" class="card"><p>Sign in with an authorized Google account.</p><button id="signin">Sign in with Google</button></div>
+<div id="app" hidden><button id="signout" class="btn sm">Sign out</button>
+<form id="up" class="card"><h2>Upload video</h2><input id="name" placeholder="Video name" maxlength="120" required>
+<input id="file" type="file" accept="video/mp4,video/webm,video/quicktime,video/x-matroska" required>
+<div class="prog" hidden><div id="bar"></div></div><button id="send">Upload</button>
+<p id="result" hidden>Token: <code id="tokenOut"></code> <button type="button" id="copy" class="btn sm">Copy token</button></p></form>
+<div class="card"><h2>Videos</h2><input id="q" placeholder="Search by token or name"><div class="tw"><table>
+<thead><tr><th>Name</th><th>Token</th><th>Date</th><th>Drive ID</th><th>Status</th><th></th></tr></thead><tbody id="list"></tbody></table></div></div></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="js/config.js"></script><script src="js/main.js"></script><script src="js/admin.js"></script></body></html>

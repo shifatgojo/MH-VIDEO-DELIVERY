@@ -1,0 +1,5 @@
+name = "mh-video-api"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+[vars]
+SUPABASE_URL = "https://qtcbsppuemuoyeobroup.supabase.co"
